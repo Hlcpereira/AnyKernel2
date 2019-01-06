@@ -85,9 +85,12 @@ if [ -f version ]; then
   done < version;
   ui_print " ";
 fi;
+ui_print "------------+ KernelX Project +------------";
+ui_print "-----          By Hlcpereira          -----";
+ui_print "___________________________________________";
 ui_print " ";
-ui_print "AnyKernel2 by osm0sis @ xda-developers";
-ui_print " ";
+ui_print "-------    AnyKernel2 by osm0sis    -------";
+ui_print "___________________________________________";
 ui_print " ";
 
 unmount_all;
@@ -124,9 +127,9 @@ if [ "$(file_getprop anykernel.sh do.devicecheck)" == 1 ]; then
   ui_print "Checking device...";
   device="$(getprop ro.product.device)";
   product="$(getprop ro.build.product)";
-  for testname in $(file_getprop anykernel.sh 'device.name.*'); do
+  for testname in $(file_getprop device.prop 'name1'); do
     if [ "$device" == "$testname" -o "$product" == "$testname" ]; then
-      ui_print "$testname";
+      ui_print "Your device is $testname";
       match=1;
       break;
     fi;
